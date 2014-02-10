@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Terminal Velocity - Introduction to the Shell</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Terminal Velocity</h1>
+					<h3>An introduction to the shell</h3>
+					<p>
+						<p><small>2/12/2014</small></p>
+						<small>Presented by <a href="http://www.austinlparker.com">Austin Parker</a> | <a href="http://twitter.com/austinlparker">@austinlparker</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Topics</h2>
+					<p>
+					<ul>
+					<li>Introduction</li>
+					<li>Conventions and Common Terminology</li>
+					<li>Getting Your Feet Wet</li>
+					<li>Going Off The Deep End</li>
+					<li>Further Reading</li>
+					</p>
+				</section>
+
+				<section>
+				<h2>Welcome To The <span style="color:red">Machine</span></h2><br><ul>
+				<ul class="fragment roll-in">
+					<b>A little history...</b><br>
+					<p>Early computers used switches, then printed cards, as an <i>interface</i>. The <i>command-line interface</i> became popular in the mid-1960's as video displays were popularized. Since then, the <i>CLI</i> has remained a powerful, fast, and efficient interface for computing.</p>
+				</ul><br>
+				<ul class="fragment roll-in">
+					<b>Why should I learn it?</b>
+					<p>It's faster</p>
+					<p>It's built-in</p>
+					<p>It's everywhere</p>
+				</ul>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Key Terminology</h2>
+					<ul>
+					<p class="fragment roll-in"><b>Interpreter</b> (<i>shell</i>)<br>The software that implements the text interface to the computer.</p>
+					<p class="fragment roll-in"><b>Prompt</b> (<i>command prompt</i>)<br>The current context for interaction with the interpreter. The default prompt on ITS Unix is <code>unix2%</code></p>
+					<p class="fragment roll-in"><b>Command</b><br>An instruction given by the client (that's you) to the interpreter. It's like tapping on an app to open it, except much less visually stimulating.</p>
+					<p class="fragment roll-in"><b>Parameter</b><br>Optional instructions as part of a command. Parameters generally fall into two categories, <i>arguments</i> and <i>options</i></p>
+					<p class="fragment roll-in"><b>Syntax</b><br>The grammar that commands to the shell must follow, differs between operating systems and applications.</p>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Conventions of Use</h2>
+					<blockquote><code>unix2% mkdir foo</code></blockquote>
+					<p><i>prompt - command - argument</i></p>
+					<br>
+					<blockquote><code>unix2% rm -rf ~/path/to/foo</code></blockquote>
+					<p><i>prompt - command - options - argument</i></p>
+					<br><ul>
+					<p class="fragment roll-in">In the first example, <b>mkdir</b> is the command and <b>foo</b> is the argument. We want to make a directory named foo.</p>
+					<p class="fragment roll-in">In the second, <b>rm</b> is the command, <b>r</b> and <b>f</b> are the options, and <b>~/path/to/foo</b> is the argument. We want to delete the directory foo and all of its subdirectories</p></ul>
+				</section>
+
+				<section>
+					<h2>Tools of the Trade</h2>
+					<img src="img/mac-os-x-lion-terminal.jpg" height="299">
+					<ul>
+					<p><b>Files and Directories</b><br>
+					<code>ls cd mv mkdir rm cat touch pwd</code></p>
+
+					<p><b>Going Places, Doing Things</b><br>
+					<code>ssh scp wget chmod chown grep tar</code></p>
+
+					<p><b>Editing Files and Getting Help</b><br>
+					<code>pico vim emacs man</code></p></ul>
+				</section>
+
+				<section>
+					<h1>Guided Exercise</h1>
+				</section>
+
+				<section>
+					<h2>Diving Deeper</h2>
+
+
+
+				</section>
+				<section>
+					<h1>Questions?</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
