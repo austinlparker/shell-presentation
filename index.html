@@ -62,9 +62,11 @@
 				</ul><br>
 				<ul class="fragment roll-in">
 					<b>Why should I learn it?</b>
-					<p>It's faster</p>
-					<p>It's built-in</p>
-					<p>It's everywhere</p>
+					<ul>
+					<li class="fragment roll-in">It's faster</li>
+					<li class="fragment roll-in">It's built-in</li>
+					<li class="fragment roll-in">It's everywhere</li>
+					</ul>
 				</ul>
 				</ul>
 				</section>
@@ -111,11 +113,120 @@
 				</section>
 
 				<section>
-					<h2>Diving Deeper</h2>
-
-
-
+					<h1>Diving Deeper</h1>
 				</section>
+
+				<section>
+					<h2>Popular Shells</h2>
+					<ul>
+					<p><b><i>bash</i></b> (Linux, MacOS) <br>
+					bash (an acronym for <i>bourne-again shell</i>) was released in 1989 and remains one of the most widely used shells - It is a replacement for the Unix standard Bourne shell. Useful features include command history and automatic command completion (tab-completion). </p>
+
+					<p><b><i>zsh</i></b> (Linux) <br>
+					zsh was written in 1990, and it extends many common Bourne shell features while mixing the best of bash, ksh, and tcsh. The main improvements over bash are a deeper command-line completion algorithm, shared command history across multiple running shells, improved handling of arrays and variables, spellcheck, and more customization. Find it at <a href="http://zsh.sourceforge.net">SourceForge</a></p></ul>
+				</section>
+
+				<section>
+				<ul>
+					<p><i>PowerShell</i> (Windows 7+)<br>
+					PowerShell was first released in 2006 and is a powerful tool for scripting and working with Windows services and applications such as Windows Server, Outlook, and the WMI. A discussion of PowerShell is beyond this lecture, please visit <a href="http://social.technet.microsoft.com/wiki/contents/articles/4307.powershell-for-beginners.aspx">this wiki</a> for more information.</p>
+
+					<p><i>PuTTY</i> (Windows, Linux)<br>
+					PuTTY isn't actually a shell, it's a terminal and serial emulator. PuTTY and its forks are the preferred method to communicate via ssh to remote servers, but it supports many more. It's relevant because to many people, PuTTY is their only real window into the terminal, so it's something you'll be using a lot if you primarily work with Windows.</p>
+
+				</ul>
+				</section>
+
+				<section>
+					<h2>Useful Terminal Features</h2>
+					<ul><p><b>I/O Redirection and Pipes</b><br>
+					<code>ps aux | grep 'apache'</code> <br>
+					<small>The pipe <code> | </code> in bash instructs the shell to send the output of the first command as the input of the second.</small><br>
+					<code>grep file.txt 'foo' > outfile.txt</code><br>
+					<code>exampleprogram &lt; infile.txt</code><br>
+					<small>The carets <code> &lt; </code> and <code> &gt; </code> direct the input to a command be from a file, or the output to a file, respectively.</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Useful Terminal Features</h2>
+					<ul><p><b>Terminal Multiplexing</b><br>
+					<code>tmux ls</code><br>
+					<code>tmux -s &lt;session&gt;</code><br>
+					<code>tmux att -t &lt;session&gt;</code><br>
+					<small>Terminal Multiplexing is offered by programs such as <code>tmux</code> and <code>screen</code>, the full scope of which is beyond this lecture. The basic concept, however, is that you are able to split your terminal into multiple separate windows that you can move between and save your work as you go. This is very handy to run on remote servers, as if your connection is interrupted, you won't lose all your work!
+					</small></p>
+					<small><p>You can find more information about tmux <a href="http://tmux.sourceforge.net">at its download page</a>. A command reference is located <a href="http://gist.github.com/afair/3489752">here</a>.</p></small>
+					</ul>
+				</section>
+
+				<section>
+					<h2>More On Permissions</h2>
+					<ul><b>Basics</b><br>
+					<p>Everyone on a computer has a unique username. At UA, this is your NetID, but you also set one up for your MacBook or Windows Laptop.</p>
+					<p>Behind the scenes, these unique usernames (and groups) determine what files you have access to. We can view this on ITS Unix with the <code>ls -l</code> command at a prompt, a sample output of which is below.</p></ul>
+					<code style="text-align:left"><small>
+					unix2% ls -l<br>
+					total 92<br>
+					-rwx------   1 ap413335 student    17012 Nov  4 13:13 a.out<br>
+					-rw-------   1 ap413335 student     4020 Jan 22 18:20 cable2.c<br>
+					drwx--S---   4 ap413335 student      512 Nov  8 14:40 CSI310<br>
+					drwx--S---   8 ap413335 student      512 Nov 22 09:12 CSI333<br>
+					drwx--S---   4 ap413335 student      512 Feb  9 12:44 CSI402<br>
+					drwxr-sr-x   2 ap413335 student      512 Sep  6 13:46 flocking<br>
+					-rw-------   1 ap413335 student        0 Nov  4 13:10 outfile<br></small></code>
+					<br>
+				</section>
+
+				<section>
+					<h2>Permissions</h2>
+					<ul>
+					<li>Position 1 is special, it will read 'd' if it is a directory, - otherwise.</li>
+					<li>Positions 2, 3, 4: <b>r</b>ead, <b>w</b>rite, e<b>x</b>ecute for user/owner</li>
+					<li>Positions 5, 6, 7: <b>r</b>ead, <b>w</b>rite, e<b>x</b>ecute for group</li>
+					<li>Positions 8, 9, 10: <b>r</b>ead, <b>w</b>rite, e<b>x</b>ecute for other/all</li>
+					<br>
+					<p>So, if we wanted a HTML file to be readable by the webserver, it's permission flags would need to look like...<br>
+					<code> -rw-r--r-- ... baz.html</code></p>
+					<p>We can set that state with the following command...<br>
+					<code>chmod 644 filename</code></p></ul>
+				</section>
+
+				<section>
+					<h2>Quick Reference</h2>
+					<ul><p>Connect to a host<br>
+						<code>ssh username@host</code></p>
+
+						<p>Copy a file from <b>remote</b> to <b>local</b><br>
+						<code>scp username@host:filename /local/path</code></p>
+
+						<p>Copy a file from <b>local</b> to <b>remote</b><br>
+						<code>scp filename username@host:/remote/path</code></p>
+
+						<p>Copy a directory from local to remote home<br>
+						<code>scp -r dir username@host:~</code></p>
+
+						<p>Move a file from one place to another<br>
+						<code>mv filename /new/path</code></p>
+
+						<p>Change a file name<br>
+						<code>mv filename new_filename</code></p>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Suggested Further Reading</h2>
+					<ul>
+					<li><a href="http://linuxcommand.org/learning_the_shell.php">Learning The Shell</a><br>
+					More details about the Unix/Linux directory structure, shell scripting, and more commands.</li>
+					<li><a href="http://www.linuxjournal.com/article/6242">Getting Started with Emacs</a><br>
+					A good introduction to the Emacs text editor.</li>
+					<li><a href="http://www.lifehacker.com/5204434/the-beginners-guide-to-creating-virtual-machines-with-virtualbox">The Beginner's Guide To VM's</a><br>Interested in trying out Linux on your existing computer? Don't like commitment? Try VirtualBox, a free virtualization tool.</li>
+					<li><a href="http://ss64.com/bash/">An A-Z Index of the Bash Command Line</a><br>
+					The exhaustive reference to commands you can enter in bash with links to the man page for each.</li>
+				</ul>
+				</section>
+
 				<section>
 					<h1>Questions?</h1>
 				</section>
