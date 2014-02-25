@@ -37,7 +37,7 @@
 					<h1>Terminal Velocity</h1>
 					<h3>An introduction to the shell</h3>
 					<p>
-						<p><small>2/12/2014</small></p>
+						<p><small>2/24/2014</small></p>
 						<small>Presented by <a href="http://www.austinlparker.com">Austin Parker</a> | <a href="http://twitter.com/austinlparker">@austinlparker</a></small>
 					</p>
 				</section>
@@ -58,7 +58,7 @@
 				<h2>Welcome To The <span style="color:red">Machine</span></h2><br><ul>
 				<ul class="fragment roll-in">
 					<b>A little history...</b><br>
-					<p>Early computers used switches, then printed cards, as an <i>interface</i>. The <i>command-line interface</i> became popular in the mid-1960's as video displays were popularized. Since then, the <i>CLI</i> has remained a powerful, fast, and efficient interface for computing.</p>
+					<p>Early computers used physical switches and printed cards as an <i>interface</i>. The <i>command-line interface</i> became popular in the mid-1960's as video displays were popularized. Since then, the <i>CLI</i> has remained a powerful, fast, and efficient interface for computing.</p>
 				</ul><br>
 				<ul class="fragment roll-in">
 					<b>Why should I learn it?</b>
@@ -75,7 +75,7 @@
 					<h2>Key Terminology</h2>
 					<ul>
 					<p class="fragment roll-in"><b>Interpreter</b> (<i>shell</i>)<br>The software that implements the text interface to the computer.</p>
-					<p class="fragment roll-in"><b>Prompt</b> (<i>command prompt</i>)<br>The current context for interaction with the interpreter. The default prompt on ITS Unix is <code>unix2%</code></p>
+					<p class="fragment roll-in"><b>Prompt</b> (<i>command prompt</i>)<br>The current context for interaction with the interpreter.<br>ITS Unix : <code>unix2%</code><br>Raspbian : <code>pi@raspberrypi ~ $</code></p>
 					<p class="fragment roll-in"><b>Command</b><br>An instruction given by the client (that's you) to the interpreter. It's like tapping on an app to open it, except much less visually stimulating.</p>
 					<p class="fragment roll-in"><b>Parameter</b><br>Optional instructions as part of a command. Parameters generally fall into two categories, <i>arguments</i> and <i>options</i></p>
 					<p class="fragment roll-in"><b>Syntax</b><br>The grammar that commands to the shell must follow, differs between operating systems and applications.</p>
@@ -99,13 +99,13 @@
 					<img src="img/mac-os-x-lion-terminal.jpg" height="299">
 					<ul>
 					<p><b>Files and Directories</b><br>
-					<code>ls cd mv mkdir rm cat touch pwd</code></p>
+					<code>ls cd pwd mv mkdir rm cat touch</code></p>
 
 					<p><b>Going Everywhere, Doing Things</b><br>
 					<code>ssh scp wget chmod chown grep tar</code></p>
 
 					<p><b>Editing Files and Getting Help</b><br>
-					<code>pico vim emacs man</code></p></ul>
+					<code>nano pico vim emacs man</code></p></ul>
 				</section>
 
 				<section>
@@ -123,7 +123,7 @@
 					bash (an acronym for <i>bourne-again shell</i>) was released in 1989 and remains one of the most widely used shells - It is a replacement for the Unix standard Bourne shell. Useful features include command history and automatic command completion (tab-completion). </p>
 
 					<p><b><i>zsh</i></b> (Linux) <br>
-					zsh was written in 1990, and it extends many common Bourne shell features while mixing the best of bash, ksh, and tcsh. The main improvements over bash are a deeper command-line completion algorithm, shared command history across multiple running shells, improved handling of arrays and variables, spellcheck, and more customization. Find it at <a href="http://zsh.sourceforge.net">SourceForge</a></p></ul>
+					zsh was written in 1990, and it extends many common Bourne shell features while mixing the best of bash, ksh, and tcsh. The main improvements over bash are a deeper command-line completion algorithm, shared command history across multiple running shells, improved handling of arrays and variables, spell check, and more customization. Find it at <a href="http://zsh.sourceforge.net">SourceForge</a></p></ul>
 				</section>
 
 				<section>
